@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Biblioteca de Componentes UI</title>
+    <link rel="stylesheet" href="/static/css/_header.css" />
+    <link rel="stylesheet" href="/static/css/componentes.css" />
+    <link rel="stylesheet" href="/static/css/formularios.css" />
+</head>
+
+<body>
+    <header class="componentes-header">
+        <nav class="componentes-nav">
+            <a href="/" class="componentes-logo">
+                <div class="componentes-logo-icon"></div>
+                <span>Componentes Gratis</span>
+            </a>
+            <ul>
+                <li><a href="/">Inicio</a></li>
+            </ul>
+            <div class="componentes-auth-buttons">
+                <div class="componentes-toggle-container">
+                    <input type="checkbox" id="componentes-toggle-theme" class="componentes-toggle-theme" />
+                    <label for="componentes-toggle-theme" class="componentes-toggle-label">
+                        <span class="componentes-toggle-ball"></span>
+                    </label>
+                </div>
+            </div>
+        </nav>
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h1>Biblioteca de Componentes</h1>
+            </div>
+
+            <nav class="sidebar-nav">
+                <div class="sidebar-section">
+                    <h2 class="sidebar-title">Botones</h2>
+                    <ul class="sidebar-list">
+                        <li><a href="#buttons" class="tab-item">Botones Básicos</a></li>
+                        <li><a href="#cta" class="tab-item">Llamadas a la Acción</a></li>
+                    </ul>
+                </div>
+
+                <div class="sidebar-section">
+                    <h2 class="sidebar-title">Formularios</h2>
+                    <ul class="sidebar-list">
+                        <li>
+                            <a href="#forms" class="tab-item">Formularios y entradas</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </aside>
+    </header>
+    <main class="main-content">
+        <!-- Sección de Botones -->
+        <section id="buttons" class="component-section">
+            <h2>Botones</h2>
+            <div class="components-grid">
+                <!-- Botón 1 -->
+                <div class="component-card">
+                    <div class="component-preview">
+                        <button class="btn-3d">Haz Clic Aquí</button>
+                    </div>
+                    <div class="component-info">
+                        <h3>Botón 3D</h3>
+                        <p>
+                            Un botón con un efecto tridimensional que se eleva al pasar el
+                            ratón por encima.
+                        </p>
+                        <button class="btn btn-ghost view-code" data-component="btn-3d">
+                            Ver Código
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Botón 2 -->
+                <div class="component-card">
+                    <div class="component-preview">
+                        <button class="btn-particles">Click Me!</button>
+                    </div>
+                    <div class="component-info">
+                        <h3>Botón con Partículas</h3>
+                        <p>Un botón que genera partículas animadas al hacer clic.</p>
+                        <button class="btn btn-ghost view-code" data-component="btn-particles">
+                            Ver Código
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Botón 3 -->
+                <div class="component-card">
+                    <div class="component-preview">
+                        <button class="btn-ripple">¡Presiona!</button>
+                    </div>
+                    <div class="component-info">
+                        <h3>Botón con Efecto de Onda</h3>
+                        <p>Un botón que muestra un efecto de onda al ser presionado.</p>
+                        <button class="btn btn-ghost view-code" data-component="btn-ripple">
+                            Ver Código
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Botón 4 -->
+                <div class="component-card">
+                    <div class="component-preview">
+                        <button class="btn-creative">Clic Aquí</button>
+                    </div>
+                    <div class="component-info">
+                        <h3>Botón Creativo</h3>
+                        <p>Un botón con un diseño creativo y animaciones llamativas.</p>
+                        <button class="btn btn-ghost view-code" data-component="btn-creative">
+                            Ver Código
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Botón 5 -->
+                <div class="component-card">
+                    <div class="component-preview">
+                        <button class="btn-shadow">¡Púlsame!</button>
+                    </div>
+                    <div class="component-info">
+                        <h3>Botón con Sombra</h3>
+                        <p>Un botón que muestra una sombra dinámica al mover el ratón.</p>
+                        <button class="btn btn-ghost view-code" data-component="btn-shadow">
+                            Ver Código
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Botón 6 -->
+                <div class="component-card">
+                    <div class="component-preview">
+                        <button class="btn btn-primary">Botón Primario</button>
+                    </div>
+                    <div class="component-info">
+                        <h3>Botón Primario</h3>
+                        <p>Un botón principal con un color de acento llamativo.</p>
+                        <button class="btn btn-ghost view-code" data-component="btn btn-primary">
+                            Ver Código
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Botón 7 -->
+                <div class="component-card">
+                    <div class="component-preview">
+                        <button class="btn btn-secondary">Botón Secundario</button>
+                    </div>
+                    <div class="component-info">
+                        <h3>Botón Secundario</h3>
+                        <p>
+                            Un botón con un estilo secundario para acciones menos
+                            importantes.
+                        </p>
+                        <button class="btn btn-ghost view-code" data-component="btn btn-secondary">
+                            Ver Código
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Botón 8 -->
+                <div class="component-card">
+                    <div class="component-preview">
+                        <button class="btn btn-outline">Botón Outline</button>
+                    </div>
+                    <div class="component-info">
+                        <h3>Botón Outline</h3>
+                        <p>
+                            Un botón con borde y fondo transparente para un estilo
+                            minimalista.
+                        </p>
+                        <button class="btn btn-ghost view-code" data-component="btn btn-outline">
+                            Ver Código
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Botón 9 -->
+                <div class="component-card">
+                    <div class="component-preview">
+                        <button class="btn btn-ghost">Botón Ghost</button>
+                    </div>
+                    <div class="component-info">
+                        <h3>Botón Ghost</h3>
+                        <p>Un botón sin fondo ni borde, ideal para fondos oscuros.</p>
+                        <button class="btn btn-ghost view-code" data-component="btn-ghost">
+                            Ver Código
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Botón 10 -->
+                <div class="component-card">
+                    <div class="component-preview">
+                        <button class="btn btn-gradient">Botón Gradient</button>
+                    </div>
+                    <div class="component-info">
+                        <h3>Botón Gradient</h3>
+                        <p>
+                            Un botón con un fondo degradado para un efecto visual atractivo.
+                        </p>
+                        <button class="btn btn-ghost view-code" data-component="btn-gradient">
+                            Ver Código
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Botón 11 -->
+                <div class="component-card">
+                    <div class="component-preview">
+                        <button class="button slide-in">Slide In</button>
+                    </div>
+                    <div class="component-info">
+                        <h3>Botón Slide In</h3>
+                        <p>Un botón con un efecto de deslizamiento al pasar el ratón.</p>
+                        <button class="btn btn-ghost view-code" data-component="button slide-in">
+                            Ver Código
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Botón 12 -->
+                <div class="component-card">
+                    <div class="component-preview">
+                        <button class="button glowing-edge">Glowing Edge</button>
+                    </div>
+                    <div class="component-info">
+                        <h3>Botón Glowing Edge</h3>
+                        <p>
+                            Un botón con un borde brillante que resalta al pasar el ratón.
+                        </p>
+                        <button class="btn btn-ghost view-code" data-component="button glowing-edge">
+                            Ver Código
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Botón 13 -->
+                <div class="component-card">
+                    <div class="component-preview">
+                        <button class="button bounce">Bounce</button>
+                    </div>
+                    <div class="component-info">
+                        <h3>Botón Bounce</h3>
+                        <p>Un botón con un efecto de rebote al pasar el ratón.</p>
+                        <button class="btn btn-ghost view-code" data-component="button bounce">
+                            Ver Código
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Sección de CTAs -->
+        <section id="cta" class="component-section">
+            <h2>Llamadas a la Acción</h2>
+            <div class="components-grid">
+                <!-- CTA 1 -->
+                <div class="component-card">
+                    <div class="component-preview">
+                        <button class="cta cta-primary" id="cta-primary">
+                            <span>Comenzar Ahora</span>
+                            <span class="cta-arrow">→</span>
+                        </button>
+                    </div>
+                    <div class="component-info">
+                        <h3>CTA Primario</h3>
+                        <p>CTA con flecha deslizante al hacer hover</p>
+                        <button class="btn btn-ghost view-code" data-component="cta cta-primary">
+                            Ver Código
+                        </button>
+                    </div>
+                </div>
+
+                <!-- CTA 2 -->
+                <div class="component-card">
+                    <div class="component-preview">
+                        <button class="cta cta-gradient" id="cta-gradient">
+                            Prueba Gratis
+                        </button>
+                    </div>
+                    <div class="component-info">
+                        <h3>CTA Gradient</h3>
+                        <p>CTA con fondo degradado</p>
+                        <button class="btn btn-ghost view-code" data-component="cta cta-gradient">
+                            Ver Código
+                        </button>
+                    </div>
+                </div>
+                <!-- CTA 3 -->
+                <!-- CTA Outline -->
+                <div class="component-card">
+                    <div class="component-preview">
+                        <button class="cta cta-outline">Más Información</button>
+                    </div>
+                    <div class="component-info">
+                        <h3>CTA Outline</h3>
+                        <p>CTA con borde</p>
+                        <button class="btn btn-ghost view-code" data-component="cta cta-outline">
+                            Ver Código
+                        </button>
+                    </div>
+                </div>
+
+                <!-- CTA 4 -->
+                <!-- CTA Floating -->
+                <div class="component-card">
+                    <div class="component-preview">
+                        <button class="cta cta-floating">Descubre Más</button>
+                    </div>
+                    <div class="component-info">
+                        <h3>CTA Flotante</h3>
+                        <p>CTA con efecto de flotación</p>
+                        <button class="btn btn-ghost view-code" data-component="cta cta-floating">
+                            Ver Código
+                        </button>
+                    </div>
+                </div>
+
+                <!-- CTA 5 -->
+                <!-- CTA Glow -->
+                <div class="component-card">
+                    <div class="component-preview">
+                        <button class="cta cta-glow">Empezar</button>
+                    </div>
+                    <div class="component-info">
+                        <h3>CTA Brillante</h3>
+                        <p>CTA con efecto de brillo</p>
+                        <button class="btn btn-ghost view-code" data-component="cta cta-glow">
+                            Ver Código
+                        </button>
+                    </div>
+                </div>
+
+                <!-- CTA 6: Brillante 2 -->
+                <div class="component-card">
+                    <div class="component-preview">
+                        <button class="cta unique-cta-glow">Empezar</button>
+                    </div>
+                    <div class="component-info">
+                        <h3>CTA Brillante</h3>
+                        <p>CTA con efecto de brillo</p>
+                        <button class="btn btn-ghost view-code" data-component="unique-cta-glow">
+                            Ver Código
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Formularios -->
+        <section id="forms" class="component-section">
+            <h2>Formularios</h2>
+            <div class="components-grid">
+                <!-- Formulario 1 -->
+                <div class="component-card">
+                    <div class="component-preview">
+                        <form class="form-login">
+                            <input type="email" placeholder="Email" />
+                            <input type="password" placeholder="Contraseña" />
+                            <button type="submit">Iniciar Sesión</button>
+                        </form>
+                    </div>
+                    <div class="component-info">
+                        <h3>Formulario de Login</h3>
+                        <p>Formulario básico de inicio de sesión</p>
+                        <button class="btn btn-ghost view-code" data-component="form-login">
+                            Ver Código
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Formulario 2 -->
+                <div class="component-card">
+                    <div class="component-preview">
+                        <form class="form-contact">
+                            <input type="text" placeholder="Nombre" />
+                            <input type="email" placeholder="Email" />
+                            <textarea placeholder="Mensaje"></textarea>
+                            <button type="submit">Enviar</button>
+                        </form>
+                    </div>
+                    <div class="component-info">
+                        <h3>Formulario de Contacto</h3>
+                        <p>Formulario de contacto con campos básicos</p>
+                        <button class="btn btn-ghost view-code" data-component="form-contact">
+                            Ver Código
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Formulario 3 -->
+                <div class="component-card">
+                    <div class="component-preview">
+                        <form class="form-search">
+                            <input type="search" placeholder="Buscar..." />
+                            <button type="submit">🔍</button>
+                        </form>
+                    </div>
+                    <div class="component-info">
+                        <h3>Formulario de Búsqueda</h3>
+                        <p>Barra de búsqueda con botón</p>
+                        <button class="btn btn-ghost view-code" data-component="form-search">
+                            Ver Código
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Formulario 4 -->
+                <div class="component-card">
+                    <div class="component-preview">
+                        <form class="form-subscribe">
+                            <input type="email" placeholder="Tu email" />
+                            <button type="submit">Suscribirse</button>
+                        </form>
+                    </div>
+                    <div class="component-info">
+                        <h3>Formulario de Suscripción</h3>
+                        <p>Formulario simple de suscripción</p>
+                        <button class="btn btn-ghost view-code" data-component="form-subscribe">
+                            Ver Código
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Formulario 5 -->
+                <!-- CardMaster - Formulario de Pago -->
+                <div class="component-card">
+                    <div class="component-preview">
+                        <form class="cardmaster-form">
+                            <input type="text" placeholder="Número de tarjeta" />
+                            <div class="form-row">
+                                <input type="text" placeholder="MM/YY" />
+                                <input type="text" placeholder="CVC" />
+                            </div>
+                            <button type="submit">Pagar</button>
+                        </form>
+                    </div>
+                    <div class="component-info">
+                        <h3>CardMaster - Formulario de Pago</h3>
+                        <p>
+                            Formulario para ingresar los datos de tu tarjeta y realizar
+                            pagos.
+                        </p>
+                        <button class="btn btn-ghost view-code" data-component="cardmaster-form">
+                            Ver Código
+                        </button>
+                    </div>
+                </div>
+
+                <!-- SimplicityX - Formulario Minimalista -->
+                <div class="component-card">
+                    <div class="component-preview">
+                        <form class="simplicityx-form">
+                            <input type="text" placeholder="Nombre" />
+                            <input type="email" placeholder="Correo electrónico" />
+                            <textarea placeholder="Mensaje"></textarea>
+                            <button type="submit">Enviar</button>
+                        </form>
+                    </div>
+                    <div class="component-info">
+                        <h3>SimplicityX - Formulario Minimalista</h3>
+                        <p>
+                            Formulario con diseño limpio y elegante, centrado en la
+                            simplicidad.
+                        </p>
+                        <button class="btn btn-ghost view-code" data-component="simplicityx-form">
+                            Ver Código
+                        </button>
+                    </div>
+                </div>
+
+                <!-- ShadowVibe - Formulario con Sombra -->
+                <div class="component-card">
+                    <div class="component-preview">
+                        <form class="shadowvibe-form">
+                            <input type="text" placeholder="Nombre" />
+                            <input type="email" placeholder="Correo electrónico" />
+                            <textarea placeholder="Mensaje"></textarea>
+                            <button type="submit">Enviar</button>
+                        </form>
+                    </div>
+                    <div class="component-info">
+                        <h3>ShadowVibe - Formulario con Sombra</h3>
+                        <p>
+                            Formulario con un diseño moderno y sombras dinámicas que dan
+                            profundidad al formulario.
+                        </p>
+                        <button class="btn btn-ghost view-code" data-component="shadowvibe-form">
+                            Ver Código
+                        </button>
+                    </div>
+                </div>
+
+                <!-- FocusFury - Campo de Entrada con Animación -->
+                <div class="component-card">
+                    <div class="component-preview">
+                        <input class="focusfury-input" type="text" placeholder="Texto de entrada" />
+                    </div>
+                    <div class="component-info">
+                        <h3>FocusFury - Campo de Entrada con Animación</h3>
+                        <p>
+                            Campo de entrada con un enfoque animado que resalta al
+                            interactuar.
+                        </p>
+                        <button class="btn btn-ghost view-code" data-component="focusfury-input">
+                            Ver Código
+                        </button>
+                    </div>
+                </div>
+
+                <!-- IconMaster - Campo de Entrada con Icono -->
+                <div class="component-card">
+                    <div class="component-preview">
+                        <div class="iconmaster-input-container">
+                            <span class="icon">&#128269;</span>
+                            <input class="iconmaster-input" type="text" placeholder="Buscar..." />
+                        </div>
+                    </div>
+                    <div class="component-info">
+                        <h3>IconMaster - Campo de Entrada con Icono</h3>
+                        <p>
+                            Campo de entrada con un ícono de búsqueda integrado para mejorar
+                            la experiencia del usuario.
+                        </p>
+                        <button class="btn btn-ghost view-code" data-component="iconmaster-input">
+                            Ver Código
+                        </button>
+                    </div>
+                </div>
+                <!-- entradas.. -->
+            </div>
+        </section>
+        <!-- Continúa con las demás secciones... -->
+    </main>
+
+    <script src="/static/js/componentes.js"></script>
+    <script src="/static/js/_header.js"></script>
+    <script src="/static/js/cta.js"></script>
+
+    <div id="codeModal" class="modal">
+        <span class="close">&times;</span>
+        <div class="modal-content">
+            <div class="component-preview" id="component-preview"></div>
+            <form class="code-form">
+                <div class="code-container">
+                    <label for="code-html">HTML:</label>
+                    <input type="text" id="code-html" readonly />
+                    <button type="button" class="copy-btn" data-target="code-html">
+                        📋
+                    </button>
+                </div>
+                <div class="code-container">
+                    <label for="code-css">CSS:</label>
+                    <input type="text" id="code-css" readonly />
+                    <button type="button" class="copy-btn" data-target="code-css">
+                        📋
+                    </button>
+                </div>
+                <div class="code-container">
+                    <label for="code-js">JS:</label>
+                    <input type="text" id="code-js" readonly />
+                    <button type="button" class="copy-btn" data-target="code-js">
+                        📋
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div id="copyNotification" class="notification-modal">
+        <div class="notification-content">
+            <p>Texto copiado al portapapeles</p>
+        </div>
+    </div>
+</body>
+
+</html>

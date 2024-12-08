@@ -1,0 +1,114 @@
+/* Header y navegación específicos para componentes */
+.componentes-header {
+    position: fixed;
+    top: 0;
+    left: 260px; /* Ajusta el margen izquierdo para que no pase por encima de la sidebar */
+    width: calc(100% - 260px); /* Ajusta el ancho para que no pase por encima de la sidebar */
+    background-color: var(--sidebar-bg);
+    border-bottom: 1px solid var(--border);
+    z-index: 1000;
+}
+
+.componentes-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.componentes-logo {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: var(--text);
+    text-decoration: none;
+}
+
+.componentes-logo-icon {
+    width: 32px;
+    height: 32px;
+    background-color: var(--accent);
+    border-radius: 8px;
+    margin-right: 0.5rem;
+}
+
+.componentes-nav ul {
+    display: flex;
+    list-style: none;
+
+}
+
+.componentes-nav ul li {
+    margin-left: 1.5rem;
+    font-weight: 600;
+}
+
+.componentes-nav ul li a{
+
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+font-size: 1.09rem;
+}
+
+.componentes-nav a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.875rem;
+    transition: color 0.3s ease;
+}
+
+.componentes-nav a:hover {
+    color: var(--text);
+}
+
+.componentes-auth-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+/* Estilos para el botón de palanca */
+.componentes-toggle-container {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.componentes-toggle-theme {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.componentes-toggle-label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    border-radius: 34px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.componentes-toggle-label .componentes-toggle-ball {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    border-radius: 50%;
+    transition: transform 0.3s;
+}
+
+.componentes-toggle-theme:checked + .componentes-toggle-label {
+    background-color: var(--accent);
+}
+
+.componentes-toggle-theme:checked + .componentes-toggle-label .componentes-toggle-ball {
+    transform: translateX(26px);
+}

@@ -1,0 +1,944 @@
+
+
+/* Definimos las variables de colores y temas para facilitar el mantenimiento y la personalización */
+:root {
+    --background: #1a1a1a; /* Color de fondo principal */
+    --sidebar-bg: #242424; /* Color de fondo de la barra lateral */
+    --card-bg: #2a2a2a; /* Color de fondo de las tarjetas */
+    --text: #ffffff; /* Color del texto principal */
+    --text-secondary: #a0a0a0; /* Color del texto secundario */
+    --accent: #10b981; /* Color de acento */
+    --border: #333333; /* Color de los bordes */
+    --primary: #3b82f6; /* Color primario */
+    --secondary: #6b7280; /* Color secundario */
+}
+
+/* Definimos las variables para el modo claro */
+body.light-mode {
+    --background: #ffffff; /* Color de fondo principal en modo claro */
+    --sidebar-bg: #f0f0f0; /* Color de fondo de la barra lateral en modo claro */
+    --card-bg: #ffffff; /* Color de fondo de las tarjetas en modo claro */
+    --text: #000000; /* Color del texto principal en modo claro */
+    --text-secondary: #555555; /* Color del texto secundario en modo claro */
+    --accent: #007bff; /* Color de acento en modo claro */
+    --border: #dddddd; /* Color de los bordes en modo claro */
+}
+
+/* Reset de estilos por defecto para asegurar consistencia entre navegadores */
+* {
+    margin: 0; /* Elimina el margen por defecto */
+    padding: 0; /* Elimina el padding por defecto */
+    box-sizing: border-box; /* Incluye el padding y el borde en el tamaño total del elemento */
+}
+
+/* Estilos generales del cuerpo */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; /* Fuente principal */
+    background-color: var(--background); /* Color de fondo */
+    color: var(--text); /* Color del texto */
+    line-height: 1.5; /* Altura de línea */
+    display: flex; /* Usamos flexbox para el layout */
+}
+/* Estilos del header en modo claro */
+body.light-mode .componentes-header {
+    background-color: var(--sidebar-bg); /* Fondo del header en modo claro */
+    border-bottom: 1px solid var(--border); /* Borde inferior del header en modo claro */
+}
+
+/* Estilos de los enlaces de navegación en modo claro */
+body.light-mode .componentes-nav a {
+    color: var(--text-secondary); /* Color del texto de los enlaces en modo claro */
+}
+
+body.light-mode .componentes-nav a:hover {
+    color: var(--text); /* Color del texto de los enlaces al pasar el ratón en modo claro */
+}
+
+/* Estilos de la barra lateral */
+.sidebar {
+    top: 0px;
+    left: 1rem;
+    width: 260px; /* Ancho de la barra lateral */
+    background-color: var(--sidebar-bg); /* Fondo de la barra lateral */
+    border-right: 1px solid var(--border); /* Borde derecho de la barra lateral */
+    padding: 1rem; /* Padding interno */
+    position: fixed; /* Posición fija */
+    height: 100vh; /* Altura completa de la Ventura */
+    overflow-y: auto; /* Scroll vertical si el contenido es mayor que la altura */
+    z-index: 2; /* Asegura que la barra lateral esté por encima del contenido principal */
+}
+
+.sidebar-section {
+    margin-bottom: 1.5rem; /* Margen inferior entre secciones */
+}
+
+.sidebar-header {
+    padding: 1rem 0; /* Padding superior e inferior */
+    border-bottom: 1px solid var(--border); /* Borde inferior */
+    margin-bottom: 1rem; /* Margen inferior */
+}
+
+.sidebar-title {
+    font-size: 0.875rem; /* Tamaño de fuente */
+    color: var(--text-secondary); /* Color del texto */
+    margin: 1.5rem 0 0.5rem; /* Margen superior e inferior */
+    text-transform: uppercase; /* Texto en mayúsculas */
+    letter-spacing: 0.05em; /* Espaciado entre letras */
+}
+
+.sidebar-list {
+    list-style: none; /* Sin estilo de lista */
+}
+
+.sidebar-list a {
+    color: var(--text); /* Color del texto */
+    text-decoration: none; /* Sin subrayado */
+    display: block; /* Mostrar como bloque */
+    padding: 0.5rem; /* Padding interno */
+    border-radius: 4px; /* Bordes redondeados */
+}
+
+.sidebar-list a:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Fondo al pasar el ratón */
+}
+
+.sidebar-item {
+    display: flex; /* Usamos flexbox para el layout */
+    align-items: center; /* Alineación vertical */
+    justify-content: space-between; /* Espacio entre elementos */
+    padding: 0.5rem; /* Padding interno */
+    color: var(--text); /* Color del texto */
+    text-decoration: none; /* Sin subrayado */
+    border-radius: 4px; /* Bordes redondeados */
+    margin-bottom: 0.25rem; /* Margen inferior */
+    cursor: pointer; /* Cursor de mano */
+}
+
+.sidebar-item:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Fondo al pasar el ratón */
+}
+
+/* Estilos del contenido principal */
+.main-content {
+    margin-left: 260px; /* Margen izquierdo para dejar espacio a la barra lateral */
+    margin-top: 80px; /* Margen superior para dejar espacio al header */
+    padding: 2rem; /* Padding interno */
+    width: calc(100% - 260px); /* Ancho calculado restando el ancho de la barra lateral */
+    z-index: 1; /* Asegura que el contenido principal esté por debajo del header */
+    position: relative; /* Posición relativa */
+}
+
+.component-section {
+    margin-bottom: 3rem; /* Margen inferior entre secciones */
+}
+
+.component-section h2 {
+    margin-bottom: 1.5rem; /* Margen inferior */
+    font-size: 1.5rem; /* Tamaño de fuente */
+}
+
+/* Estilos de la cuadrícula de componentes */
+.components-grid {
+    display: grid; /* Usamos grid para el layout */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Columnas automáticas con un mínimo de 250px */
+    gap: 1.5rem; /* Espacio entre elementos */
+}
+
+/* Estilos de las tarjetas de componentes */
+.component-card {
+    background-color: var(--card-bg); /* Fondo de las tarjetas */
+    border: 1px solid var(--border); /* Borde de las tarjetas */
+    border-radius: 8px; /* Bordes redondeados */
+    overflow: hidden; /* Ocultar contenido desbordado */
+    width: 300px; /* Ancho fijo */
+    height: auto; /* Altura automática para ajustar el contenido */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para destacar */
+    display: flex; /* Usamos flexbox para el layout */
+    flex-direction: column; /* Dirección de los elementos en columna */
+    justify-content: space-between; /* Espacio entre elementos */
+}
+
+.component-preview {
+    padding: 1.5rem; /* Padding interno */
+    display: flex; /* Usamos flexbox para el layout */
+    align-items: center; /* Alineación vertical */
+    justify-content: center; /* Alineación horizontal */
+    background-color: rgba(0, 0, 0, 0.2); /* Fondo semitransparente */
+    min-height: 150px; /* Altura mínima */
+    width: 100%; /* Asegurar que ocupe todo el ancho del contenedor */
+    height: 100%; /* Asegurar que ocupe toda la altura del contenedor */
+    object-fit: contain; /* Ajustar el contenido sin deformarlo */
+}
+
+.component-info {
+    padding: 1.5rem; /* Padding interno */
+    text-align: left; /* Alineación del texto a la izquierda */
+}
+
+.component-info .view-code {
+    display: block; /* Mostrar como bloque */
+    margin: 2rem auto 0; /* Margen superior y centrado horizontal */
+    padding: 0.5rem 1rem; /* Padding interno */
+    text-align: center; /* Alineación del texto al centro */
+    background-color: var(--background); /* Fondo */
+    color: var(--text-secondary); /* Color del texto */
+}
+
+.component-info h3 {
+    margin-bottom: 0.5rem; /* Margen inferior */
+}
+
+.component-info p {
+    color: var(--text-secondary); /* Color del texto */
+    font-size: 0.875rem; /* Tamaño de fuente */
+}
+
+.component-title {
+    font-size: 1.25rem; /* Tamaño de fuente */
+    margin-bottom: 0.5rem; /* Margen inferior */
+}
+
+.component-description {
+    color: var(--text-secondary); /* Color del texto */
+    font-size: 0.875rem; /* Tamaño de fuente */
+}
+
+.tag-new {
+    background-color: var(--accent); /* Fondo */
+    color: var(--background); /* Color del texto */
+    font-size: 0.75rem; /* Tamaño de fuente */
+    padding: 0.125rem 0.5rem; /* Padding interno */
+    border-radius: 999px; /* Bordes redondeados */
+}
+
+/* Componentes de demostración */
+.tabs-demo {
+    background-color: var(--card-bg); /* Fondo */
+    border-radius: 4px; /* Bordes redondeados */
+    padding: 0.5rem; /* Padding interno */
+    display: flex; /* Usamos flexbox para el layout */
+    gap: 0.5rem; /* Espacio entre elementos */
+}
+
+.tab-item {
+    padding: 0.5rem 1rem; /* Padding interno */
+    border-radius: 4px; /* Bordes redondeados */
+    cursor: pointer; /* Cursor de mano */
+}
+
+.tab-item.active {
+    background-color: rgba(255, 255, 255, 0.1); /* Fondo al estar activo */
+}
+
+.vertical-nav-demo {
+    background-color: var(--card-bg); /* Fondo */
+    border-radius: 4px; /* Bordes redondeados */
+    padding: 0.5rem; /* Padding interno */
+    width: 200px; /* Ancho fijo */
+}
+
+.vertical-nav-item {
+    padding: 0.5rem 1rem; /* Padding interno */
+    margin: 0.25rem 0; /* Margen vertical */
+    border-radius: 4px; /* Bordes redondeados */
+    cursor: pointer; /* Cursor de mano */
+}
+
+.vertical-nav-item:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Fondo al pasar el ratón */
+}
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .sidebar {
+        transform: translateX(-100%); /* Ocultar barra lateral */
+        transition: transform 0.3s ease; /* Transición suave */
+    }
+
+    .sidebar.active {
+        transform: translateX(0); /* Mostrar barra lateral */
+    }
+
+    .main-content {
+        margin-left: 0; /* Eliminar margen izquierdo */
+        width: 100%; /* Ancho completo */
+    }
+
+    .components-grid {
+        grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
+    }
+}
+
+/* Estilos personalizados para la barra de desplazamiento */
+::-webkit-scrollbar {
+    width: 12px; /* Ancho de la barra de desplazamiento */
+}
+
+::-webkit-scrollbar-track {
+    background: var(--sidebar-bg); /* Color de fondo de la pista de la barra de desplazamiento */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--accent); /* Color de la barra de desplazamiento */
+    border-radius: 6px; /* Radio de borde de la barra de desplazamiento */
+    border: 3px solid var(--sidebar-bg); /* Espacio alrededor de la barra de desplazamiento */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--accent); /* Color de la barra de desplazamiento al pasar el ratón por encima */
+}
+
+/* Estilos específicos para la barra de desplazamiento del main-content */
+.main-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+/* Estilos específicos para la barra de desplazamiento del main-content */
+.main-content::-webkit-scrollbar {
+    width: 8px; /* Ancho de la barra de desplazamiento */
+}
+
+.main-content::-webkit-scrollbar-thumb {
+    background-color: var(--primary); /* Color del pulgar de la barra de desplazamiento */
+    border-radius: 4px; /* Bordes redondeados del pulgar */
+}
+
+.main-content::-webkit-scrollbar-track {
+    background-color: var(--sidebar-bg); /* Color de fondo de la pista de la barra de desplazamiento */
+}
+
+/* Botones */
+.btn {
+    padding: 0.5rem 1rem; /* Padding interno */
+    border-radius: 4px; /* Bordes redondeados */
+    border: none; /* Sin borde */
+    cursor: pointer; /* Cursor de mano */
+    font-size: 0.875rem; /* Tamaño de fuente */
+    transition: all 0.2s; /* Transición suave */
+}
+
+/* Botón primario */
+.btn-primary {
+    background-color: var(--primary); /* Fondo */
+    color: white; /* Color del texto */
+}
+
+/* Botón secundario */
+.btn-secondary {
+    background-color: var(--secondary); /* Fondo */
+    color: white; /* Color del texto */
+}
+
+/* Botón con borde */
+.btn-outline {
+    background-color: transparent; /* Fondo transparente */
+    border: 1px solid var(--primary); /* Borde */
+    color: var(--primary); /* Color del texto */
+}
+
+/* Botón fantasma */
+.btn-ghost {
+    background-color: transparent; /* Fondo transparente */
+    color: var(--primary); /* Color del texto */
+}
+
+/* Botón con degradado */
+.btn-gradient {
+    background: linear-gradient(45deg, var(--primary), var(--accent)); /* Fondo con degradado */
+    color: white; /* Color del texto */
+}
+
+
+/* Estilos para el botón 3D */
+.btn-3d {
+    background-color: #4CAF50; /* Fondo verde */
+    color: white; /* Texto blanco */
+    padding: 15px 32px; /* Padding interno */
+    text-align: center; /* Alineación del texto al centro */
+    text-decoration: none; /* Sin subrayado */
+    display: inline-block; /* Mostrar como bloque en línea */
+    font-size: 16px; /* Tamaño de fuente */
+    border: none; /* Sin borde */
+    border-radius: 10px; /* Bordes redondeados */
+    cursor: pointer; /* Cursor de mano */
+    box-shadow: 0 6px #999; /* Sombra */
+    transition: all 0.3s ease; /* Transición suave */
+}
+
+.btn-3d:hover {
+    transform: translateY(-5px); /* Mover hacia arriba al pasar el ratón */
+    box-shadow: 0 12px #666; /* Sombra más grande */
+}
+
+.btn-3d:active {
+    transform: translateY(4px); /* Mover hacia abajo al hacer clic */
+    box-shadow: 0 4px #666; /* Sombra más pequeña */
+}
+
+/* Estilos para el botón con partículas */
+.btn-particles {
+    background-color: #FF6347; /* Fondo rojo */
+    color: white; /* Texto blanco */
+    font-size: 18px; /* Tamaño de fuente */
+    padding: 15px 30px; /* Padding interno */
+    border: none; /* Sin borde */
+    border-radius: 25px; /* Bordes redondeados */
+    cursor: pointer; /* Cursor de mano */
+    position: relative; /* Posición relativa */
+    overflow: hidden; /* Ocultar contenido desbordado */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Sombra */
+    transition: background-color 0.3s; /* Transición suave */
+}
+
+.btn-particles:hover {
+    background-color: #FF4500; /* Fondo más oscuro al pasar el ratón */
+}
+
+.particle {
+    position: absolute; /* Posición absoluta */
+    width: 10px; /* Ancho */
+    height: 10px; /* Altura */
+    background-color: #fff5bc; /* Fondo amarillo claro */
+    border-radius: 50%; /* Bordes redondeados */
+    opacity: 0; /* Opacidad */
+    animation: particle-animation 1s forwards; /* Animación */
+}
+
+@keyframes particle-animation {
+    0% { opacity: 1; transform: scale(1); } /* Inicio de la animación */
+    100% { opacity: 0; transform: scale(0); } /* Fin de la animación */
+}
+
+/* Estilos para el botón con sombra */
+.btn-shadow {
+    background-color: #008CBA; /* Fondo azul */
+    color: white; /* Texto blanco */
+    padding: 15px 30px; /* Padding interno */
+    font-size: 16px; /* Tamaño de fuente */
+    border: none; /* Sin borde */
+    border-radius: 10px; /* Bordes redondeados */
+    cursor: pointer; /* Cursor de mano */
+    position: relative; /* Posición relativa */
+    transition: all 0.2s ease; /* Transición suave */
+}
+
+.btn-shadow:hover {
+    transform: scale(1.1); /* Aumentar tamaño al pasar el ratón */
+}
+
+.btn-shadow:active {
+    transform: scale(1.05); /* Reducir tamaño al hacer clic */
+}
+
+/* Estilos para el botón con efecto de onda */
+.btn-ripple {
+    background-color: #0d9b2c; /* Fondo verde oscuro */
+    color: white; /* Texto blanco */
+    padding: 15px 30px; /* Padding interno */
+    border: none; /* Sin borde */
+    font-size: 16px; /* Tamaño de fuente */
+    border-radius: 50px; /* Bordes redondeados */
+    cursor: pointer; /* Cursor de mano */
+    position: relative; /* Posición relativa */
+    overflow: hidden; /* Ocultar contenido desbordado */
+    transition: background-color 0.3s; /* Transición suave */
+}
+
+.btn-ripple:hover {
+    background-color: #0c8033; /* Fondo más oscuro al pasar el ratón */
+}
+
+.btn-ripple:focus {
+    outline: none; /* Sin borde de enfoque */
+}
+
+.btn-ripple::after {
+    content: ''; /* Contenido vacío */
+    position: absolute; /* Posición absoluta */
+    background: rgba(0, 0, 0, 0.1); /* Fondo semitransparente */
+    border-radius: 50%; /* Bordes redondeados */
+    width: 300%; /* Ancho */
+    height: 300%; /* Altura */
+    transition: all 0.6s ease; /* Transición suave */
+    pointer-events: none; /* Sin eventos de puntero */
+    transform: scale(0); /* Escala inicial */
+}
+
+.btn-ripple:active::after {
+    transform: scale(1); /* Escala al hacer clic */
+    animation: ripple 0.6s; /* Animación */
+}
+
+@keyframes ripple {
+    0% { transform: scale(0); } /* Inicio de la animación */
+    100% { transform: scale(1); } /* Fin de la animación */
+}
+
+.ripple {
+    position: absolute; /* Posición absoluta */
+    border-radius: 50%; /* Bordes redondeados */
+    background: rgba(0, 0, 0, 0.1); /* Fondo semitransparente */
+    transform: scale(0); /* Escala inicial */
+    animation: ripple-animation 0.6s linear; /* Animación */
+}
+
+@keyframes ripple-animation {
+    to {
+        transform: scale(4); /* Escala final */
+        opacity: 0; /* Opacidad final */
+    }
+}
+
+/* Estilos para el botón creativo */
+.btn-creative {
+    background-color: transparent; /* Fondo transparente */
+    border: 2px solid transparent; /* Borde transparente */
+    border-radius: 50px; /* Bordes redondeados */
+    padding: 15px 40px; /* Padding interno */
+    font-size: 20px; /* Tamaño de fuente */
+    color: #fff; /* Texto blanco */
+    font-weight: bold; /* Negrita */
+    text-transform: uppercase; /* Texto en mayúsculas */
+    cursor: pointer; /* Cursor de mano */
+    position: relative; /* Posición relativa */
+    overflow: hidden; /* Ocultar contenido desbordado */
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1); /* Sombra */
+    transition: all 0.3s ease; /* Transición suave */
+    outline: none; /* Sin borde de enfoque */
+    z-index: 1; /* Índice z */
+    display: inline-block; /* Mostrar como bloque en línea */
+}
+
+.btn-creative::before {
+    content: ''; /* Contenido vacío */
+    position: absolute; /* Posición absoluta */
+    top: 50%; /* Posición superior */
+    left: 50%; /* Posición izquierda */
+    width: 300%; /* Ancho */
+    height: 300%; /* Altura */
+    background: linear-gradient(45deg, #ff0080, #ff8c00, #ece909); /* Fondo con degradado */
+    background-size: 400% 400%; /* Tamaño del fondo */
+    border-radius: 50%; /* Bordes redondeados */
+    transform: translate(-50%, -50%); /* Transformación */
+    z-index: -1; /* Índice z */
+    animation: gradientAnimation 4s ease infinite; /* Animación */
+}
+
+.btn-creative::after {
+    content: ''; /* Contenido vacío */
+    position: absolute; /* Posición absoluta */
+    top: 50%; /* Posición superior */
+    left: 50%; /* Posición izquierda */
+    width: 0; /* Ancho inicial */
+    height: 100%; /* Altura */
+    background-color: #ffffff21; /* Fondo semitransparente */
+    border-radius: 50px; /* Bordes redondeados */
+    transform: translate(-50%, -50%); /* Transformación */
+    transition: all 0.3s ease; /* Transición suave */
+    z-index: 0; /* Índice z */
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%; /* Posición inicial del fondo */
+    }
+    50% {
+        background-position: 100% 50%; /* Posición media del fondo */
+    }
+    100% {
+        background-position: 0% 50%; /* Posición final del fondo */
+    }
+}
+
+.btn-creative:hover {
+    transform: scale(1.1); /* Aumentar tamaño al pasar el ratón */
+    box-shadow: 0 20px 25px rgba(0, 0, 0, 0.15); /* Sombra más grande */
+}
+
+.btn-creative:hover::after {
+    width: 100%; /* Ancho completo al pasar el ratón */
+}
+
+/* Estilos para el botón slide-in */
+.button.slide-in {
+    background: linear-gradient(135deg, #6a6a6a, #1f1f1f); /* Fondo con degradado */
+    color: #fff; /* Texto blanco */
+    font-size: 18px; /* Tamaño de fuente */
+    text-transform: uppercase; /* Texto en mayúsculas */
+    padding: 20px 40px; /* Padding interno */
+    cursor: pointer; /* Cursor de mano */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra */
+    position: relative; /* Posición relativa */
+    overflow: hidden; /* Ocultar contenido desbordado */
+    transition: all 0.3s ease; /* Transición suave */
+    border: none; /* Sin borde */
+}
+
+.button.slide-in:hover {
+    background: linear-gradient(135deg, #1f1f1f, #6a6a6a); /* Fondo más oscuro al pasar el ratón */
+    transform: translateX(10px); /* Mover hacia la derecha al pasar el ratón */
+}
+
+.button.slide-in::after {
+    content: ''; /* Contenido vacío */
+    position: absolute; /* Posición absoluta */
+    top: 0; /* Posición superior */
+    left: -100%; /* Posición izquierda inicial */
+    width: 100%; /* Ancho */
+    height: 100%; /* Altura */
+    background-color: rgba(0, 0, 0, 0.2); /* Fondo semitransparente */
+    transition: all 0.3s ease; /* Transición suave */
+}
+
+.button.slide-in:hover::after {
+    left: 100%; /* Mover hacia la derecha al pasar el ratón */
+}
+
+/* Estilos para el botón glowing-edge */
+.button.glowing-edge {
+    background-color: #333; /* Fondo gris oscuro */
+    color: #fff; /* Texto blanco */
+    font-size: 18px; /* Tamaño de fuente */
+    padding: 20px 40px; /* Padding interno */
+    text-transform: uppercase; /* Texto en mayúsculas */
+    cursor: pointer; /* Cursor de mano */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra */
+    border: 2px solid #333; /* Borde */
+    position: relative; /* Posición relativa */
+    transition: all 0.3s ease; /* Transición suave */
+    border: none; /* Sin borde */
+    display: flex; /* Usamos flexbox para el layout */
+    align-items: center; /* Alineación vertical */
+    justify-content: center; /* Alineación horizontal */
+}
+
+.button.glowing-edge:hover {
+    color: #ff6b6b; /* Texto rojo al pasar el ratón */
+    border: 2px solid #ff6b6b; /* Borde rojo al pasar el ratón */
+    box-shadow: 0 0 10px rgba(255, 107, 107, 0.7); /* Sombra roja */
+}
+
+.button.glowing-edge:active {
+    transform: scale(0.98); /* Reducir tamaño al hacer clic */
+}
+
+/* Estilos para el botón bounce */
+.button.bounce {
+    background-color: #3b3b3b; /* Fondo gris oscuro */
+    color: #fff; /* Texto blanco */
+    font-size: 18px; /* Tamaño de fuente */
+    padding: 20px 40px; /* Padding interno */
+    text-transform: uppercase; /* Texto en mayúsculas */
+    cursor: pointer; /* Cursor de mano */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra */
+    transition: all 0.3s ease; /* Transición suave */
+    border: none; /* Sin borde */
+}
+
+.button.bounce:hover {
+    animation: bounce 0.6s ease-in-out; /* Animación al pasar el ratón */
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0); /* Inicio y fin de la animación */
+    }
+    50% {
+        transform: translateY(-10px); /* Mitad de la animación */
+    }
+}
+
+
+ /* Estilo para el CTA Primario */
+    .cta-primary {
+        background-color: #007BFF;
+        color: white;
+        font-size: 16px;
+        padding: 12px 24px;
+        border: 2px solid #007BFF;
+        border-radius: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+        transition: all 0.3s ease;
+    }
+
+    .cta-primary span {
+        z-index: 1;
+    }
+
+    .cta-arrow {
+        margin-left: 10px;
+        font-size: 20px;
+        transition: transform 0.3s ease;
+    }
+
+    /* Efecto de deslizamiento de la flecha */
+    .cta-primary:hover .cta-arrow {
+        transform: translateX(10px);
+    }
+
+    /* Cambio de fondo y borde al hacer hover */
+    .cta-primary:hover {
+        background-color: #0056b3;
+        border-color: #0056b3;
+    }
+
+    
+.cta-outline {
+        background-color: transparent;
+        border: 2px solid #007BFF;
+        color: #007BFF;
+        padding: 15px 30px;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 50px;
+        transition: all 0.3s ease;
+    }
+
+    .cta-outline:hover {
+        background-color: #007BFF;
+        color: white;
+        transform: scale(1.05);
+    }
+
+/* Estilos para el botón CTA flotante */
+.cta-floating {
+    background-color: #28a745; /* Fondo verde */
+    color: white; /* Color del texto */
+    padding: 15px 30px; /* Espaciado interno del botón */
+    font-size: 16px; /* Tamaño de fuente */
+    cursor: pointer; /* Cambiar el cursor a una mano al pasar sobre el botón */
+    border: none; /* Sin borde */
+    border-radius: 50px; /* Bordes redondeados */
+    box-shadow: 0 10px 20px rgba(0, 128, 0, 0.2); /* Sombra para dar efecto de flotación */
+    position: relative; /* Posición relativa */
+    z-index: 1; /* Índice z para asegurar que el botón esté por encima de otros elementos */
+    transition: all 0.3s ease; /* Transición suave para todas las propiedades */
+}
+
+/* Estilos para el botón CTA flotante cuando está activo (al hacer clic) */
+.cta-floating:active {
+    box-shadow: none; /* Eliminar la sombra al hacer clic */
+    transform: translateY(5px); /* Mover el botón hacia abajo 5px al hacer clic */
+} 
+
+/* CTA Gradient */
+.cta-gradient {
+    background: linear-gradient(45deg, var(--primary), var(--accent));
+    color: white;
+    padding: 16px 32px;
+    font-size: 18px;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.cta-gradient:hover {
+    background: linear-gradient(45deg, var(--accent), var(--primary));
+    transform: scale(1.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos para el botón CTA con efecto de brillo */
+.cta-glow {
+    background-color: #ff6f61; /* Fondo del botón */
+    color: white; /* Color del texto */
+    text-transform: uppercase; /* Texto en mayúsculas */
+    padding: 15px 30px; /* Espaciado interno del botón */
+    font-size: 16px; /* Tamaño de fuente */
+    cursor: pointer; /* Cambiar el cursor a una mano al pasar sobre el botón */
+    border: none; /* Sin borde */
+    border-radius: 50px; /* Bordes redondeados */
+    position: relative; /* Posición relativa */
+    transition: all 0.3s ease; /* Transición suave para todas las propiedades */
+}
+
+/* Efecto de brillo para el botón CTA */
+.cta-glow:after {
+    content: ''; /* Contenido vacío */
+    position: absolute; /* Posición absoluta */
+    top: 0; /* Posición superior */
+    left: 0; /* Posición izquierda */
+    right: 0; /* Posición derecha */
+    bottom: 0; /* Posición inferior */
+    background: rgba(255, 111, 97, 0.3); /* Fondo semitransparente */
+    filter: blur(8px); /* Aplicar desenfoque */
+    opacity: 0; /* Opacidad inicial */
+    transition: opacity 0.3s ease-in-out; /* Transición suave para la opacidad */
+}
+
+/* Efecto al pasar el ratón sobre el botón CTA */
+.cta-glow:hover:after {
+    opacity: 1; /* Aumentar la opacidad al pasar el ratón */
+}
+
+/* Efecto al pasar el ratón sobre el botón CTA */
+.cta-glow:hover {
+    transform: scale(1.1); /* Aumentar el tamaño al pasar el ratón */
+}
+
+
+ /* Estilo para el botón CTA Brillante 2 */
+    .unique-cta-glow {
+        background-color: #3A3D40; /* Color oscuro elegante */
+        color: white;
+        font-size: 16px;
+        padding: 12px 24px;
+        border: none;
+        border-radius: 50px;
+        cursor: pointer;
+        text-transform: uppercase;
+        font-weight: 600;
+        letter-spacing: 1px;
+        position: relative;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+        overflow: hidden;
+        transition: all 0.4s ease;
+    }
+
+    /* Efecto de brillo suave al pasar el ratón */
+    .unique-cta-glow::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 300%;
+        height: 300%;
+        background: rgba(255, 255, 255, 0.1); /* Brillo sutil */
+        border-radius: 50%;
+        transform: translate(-50%, -50%) scale(0);
+        transition: transform 0.5s ease-out;
+    }
+
+    .unique-cta-glow:hover::after {
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    /* Efecto de suavizado cuando el botón es presionado */
+    .unique-cta-glow:hover {
+        background-color: #2C2F33; /* Color de fondo más oscuro al pasar el ratón */
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
+        transform: scale(1.05); /* Aumento ligero de tamaño */
+    }
+
+    /* Efecto al hacer clic */
+    .unique-cta-glow:active {
+        transform: scale(0.98); /* Efecto de "presión" al hacer clic */
+        background-color: #262A2D; /* Fondo más oscuro */
+    }
+
+/* Estilos del modal */
+.modal {
+    display: none; /* Ocultar por defecto */
+    position: fixed; /* Posición fija */
+    z-index: 1000; /* Índice z */
+    left: 0; /* Posición izquierda */
+    top: 0; /* Posición superior */
+    width: 100%; /* Ancho completo */
+    height: 100%; /* Altura completa */
+    overflow: auto; /* Scroll automático */
+    background-color: rgba(0, 0, 0, 0.74); /* Fondo semitransparente */
+}
+
+.modal-content {
+    background-color: var(--background); /* Fondo */
+    margin: 5% auto; /* Margen superior y centrado horizontal */
+    padding: 20px; /* Padding interno */
+    border: 1px solid var(--border); /* Borde */
+    width: 90%; /* Ancho del modal */
+    max-width: 800px; /* Ancho máximo del modal */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 5px 15px rgba(20, 20, 20, 0.3); /* Sombra */
+    display: flex; /* Usamos flexbox para el layout */
+    flex-direction: column; /* Dirección de los elementos en columna */
+    gap: 1rem; /* Espacio entre elementos */
+}
+
+.close-modal {
+    color: #aaa;
+    align-self: flex-end; /* Alinear al final del contenedor */
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-modal:hover,
+.close-modal:focus {
+    color: black; /* Color del texto al pasar el ratón o enfocar */
+    text-decoration: none; /* Sin subrayado */
+    cursor: pointer; /* Cursor de mano */
+}
+
+/* Estilos del formulario de código */
+.code-form {
+    display: flex; /* Usamos flexbox para el layout */
+    flex-direction: column; /* Dirección de los elementos en columna */
+    gap: 1rem; /* Espacio entre elementos */
+    padding: 1rem; /* Padding interno */
+}
+
+.code-container {
+    display: flex; /* Usamos flexbox para el layout */
+    align-items: center; /* Alineación vertical */
+    gap: 0.5rem; /* Espacio entre elementos */
+}
+
+.code-container label {
+    flex: 0 0 50px; /* Ancho fijo */
+}
+
+.code-container input[type="text"] {
+    flex: 1; /* Ancho flexible */
+    padding: 0.5rem; /* Padding interno */
+    border: none; /* Sin borde */
+    border-radius: 4px; /* Bordes redondeados */
+    background-color: #202020; /* Fondo */
+    color: #f1f1f1; /* Color del texto */
+}
+
+.code-container textarea {
+    flex: 1; /* Ancho flexible */
+    padding: 0.5rem; /* Padding interno */
+    border: 1px solid #ccc; /* Borde */
+    border-radius: 4px; /* Bordes redondeados */
+    background-color: #f9f9f9; /* Fondo */
+    color: #333; /* Color del texto */
+    resize: none; /* Sin redimensionar */
+    height: 100px; /* Altura fija */
+}
+
+.copy-btn {
+    background-color: #202020; /* Fondo */
+    color: rgb(77, 77, 77); /* Color del texto */
+    border: none; /* Sin borde */
+    padding: 0.5rem; /* Padding interno */
+    cursor: pointer; /* Cursor de mano */
+    border-radius: 4px; /* Bordes redondeados */
+}
+
+/* Estilos para el modal de notificación */
+.notification-modal {
+    display: none; /* Ocultar por defecto */
+    position: fixed; /* Posición fija */
+    z-index: 1001; /* Índice z */
+    left: 50%; /* Posición izquierda */
+    top: 50%; /* Posición superior */
+    transform: translate(-50%, -50%); /* Transformación */
+    background-color: var(--background); /* Fondo */
+    color: var(--text); /* Color del texto */
+    padding: 1rem; /* Padding interno */
+    margin: 0%; /* Sin margen */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Sombra */
+}
+
+.notification-content {
+    text-align: center; /* Alineación del texto al centro */
+}

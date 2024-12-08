@@ -1,0 +1,811 @@
+
+
+/* Estilo único para Formulario de Búsqueda */
+.form-search {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background: #ecf0f1;
+  padding: 20px;
+  border-radius: 25px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-search input {
+  padding: 10px 20px;
+  border: 2px solid #bdc3c7;
+  border-radius: 30px;
+  width: 40px;
+  font-size: 16px;
+  transition: width 0.4s ease;
+}
+
+.form-search input:focus {
+  width: 200px;
+  border-color: #3498db;
+}
+
+.form-search button {
+  border-radius: 50%;
+  padding: 12px;
+  background: #3498db;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s;
+}
+
+.form-search button:hover {
+  background: #2980b9;
+}
+
+.form-search button:active {
+  transform: scale(0.95);
+}
+
+
+/* Estilo para el formulario de Login */
+.form-login {
+    background: #1a1a1a;
+    padding: 40px;
+    border-radius: 15px;
+    max-width: 400px;
+    margin: 30px auto;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.form-login input {
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #444;
+    border-radius: 8px;
+    background-color: #333;
+    color: white;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.form-login input:focus {
+    border-color: #4CAF50;
+    background-color: #444;
+}
+
+.form-login button {
+    width: 100%;
+    padding: 14px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.form-login button:hover {
+    background-color: #45a049;
+}
+
+/* Efectos neumórficos al enfocar los campos de entrada */
+.form-login input:focus,
+.form-contact input:focus,
+.form-subscribe input:focus,
+.form-payment input:focus {
+    border-color: #4CAF50;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2), inset 4px 4px 8px rgba(255, 255, 255, 0.6);
+    transition: all 0.3s ease;
+}
+
+
+/* Estilo para el formulario de Contacto */
+.form-contact {
+    background-color: #fafafa;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    max-width: 450px;
+    margin: 40px auto;
+}
+
+.form-contact input, .form-contact textarea {
+    padding: 12px;
+    border: 2px solid #7ec8e1;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+.form-contact input:focus, .form-contact textarea:focus {
+    border-color: #61c5ff;
+    outline: none;
+}
+
+.form-contact button {
+    width: 100%;
+    padding: 14px;
+    background-color: #7ec8e1;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.form-contact button:hover {
+    background-color: #ff6f61;
+}
+
+/* Animación de desvanecimiento para el formulario al cargar */
+.form-login, .form-contact, .form-subscribe, .form-payment {
+    opacity: 0;
+    animation: fadeIn 1s ease-in forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+
+
+/* Estilo para el formulario de Búsqueda 
+.form-search {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 25px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    margin: 40px auto;
+}
+
+.form-search input {
+    width: 85%;
+    padding: 12px;
+    border: none;
+    border-radius: 15px;
+    font-size: 18px;
+    background-color: #f2f2f2;
+    transition: width 0.3s ease-in-out;
+}
+
+.form-search input:focus {
+    width: 100%;
+    outline: none;
+    background-color: #ffffff;
+}
+
+.form-search button {
+    width: 15%;
+    padding: 12px;
+    background-color: #007bff;
+    border: none;
+    border-radius: 50%;
+    font-size: 18px;
+    color: white;
+    cursor: pointer;
+}
+
+.form-search button:hover {
+    background-color: #0056b3;
+}*/
+
+/* Estilo para el formulario de Suscripción */
+.form-subscribe {
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    margin: 50px auto;
+}
+
+.form-subscribe input {
+    width: 100%;
+    padding: 14px;
+    border: 2px solid #333;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+.form-subscribe button {
+    width: 100%;
+    padding: 15px;
+    background-color: #ffd700;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    color: #333;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.form-subscribe button:hover {
+    background-color: #ffcc00;
+}
+
+
+
+/* Estilo para el formulario de Pago */
+.form-payment {
+    background: #f7f9fa;
+    padding: 30px;
+    border-radius: 25px;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1), -10px -10px 20px rgba(255, 255, 255, 0.5);
+    max-width: 450px;
+    margin: 40px auto;
+}
+
+.form-payment input {
+    padding: 15px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 16px;
+    background: #f0f0f0;
+    box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.1), inset -4px -4px 8px rgba(255, 255, 255, 0.3);
+    transition: all 0.3s ease;
+}
+
+.form-payment input:focus {
+    border-color: #28a745;
+    background: #ffffff;
+    box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.1), inset -4px -4px 8px rgba(255, 255, 255, 0.6);
+}
+
+.form-payment button {
+    width: 100%;
+    padding: 15px;
+    background-color: #28a745;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.form-payment button:hover {
+    background-color: #218838;
+}
+
+    /* CardMaster - Formulario de Pago */
+.cardmaster-form {
+    background: linear-gradient(135deg, #32a852, #28a745);
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    padding: 25px;
+    max-width: 420px;
+    margin: auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.cardmaster-form::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: #fff;
+    animation: pulse 1.5s infinite alternate;
+}
+
+.cardmaster-form input {
+    width: 100%;
+    padding: 15px;
+    margin: 12px 0;
+    border-radius: 10px;
+    border: 2px solid transparent;
+    background-color: #fff;
+    font-size: 16px;
+    color: #333;
+    transition: all 0.3s ease;
+}
+
+.cardmaster-form input:focus {
+    border-color: #32a852;
+    box-shadow: 0 0 15px rgba(50, 168, 82, 0.3);
+    outline: none;
+}
+
+.cardmaster-form .form-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.cardmaster-form .form-row input {
+    width: 48%;
+}
+
+.cardmaster-form button {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(135deg, #28a745, #1c7f33);
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    transform: scale(1);
+}
+
+.cardmaster-form button:hover {
+    background: linear-gradient(135deg, #1c7f33, #28a745);
+    transform: scale(1.05);
+}
+
+.cardmaster-form .component-info {
+    text-align: center;
+    padding: 12px 0;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-top: 2px solid #ddd;
+    color: #fff;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scaleX(1);
+    }
+    100% {
+        transform: scaleX(1.5);
+    }
+}
+/* SimplicityX - Formulario Minimalista */
+.simplicityx-form {
+    background: #f7f7f7;
+    border-radius: 18px;
+    padding: 30px;
+    width: 100%;
+    max-width: 400px;
+    margin: auto;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.4s ease;
+}
+
+.simplicityx-form:hover {
+    transform: translateY(-10px);
+}
+
+.simplicityx-form input, .simplicityx-form textarea {
+    width: 100%;
+    padding: 18px;
+    margin: 15px 0;
+    border: 2px solid #ccc;
+    border-radius: 12px;
+    background-color: #fff;
+    font-size: 16px;
+    color: #333;
+    font-family: 'Roboto', sans-serif;
+    transition: all 0.3s ease;
+}
+
+.simplicityx-form input:focus, .simplicityx-form textarea:focus {
+    border-color: #ff6f61;
+    box-shadow: 0 0 10px rgba(255, 111, 97, 0.3);
+    outline: none;
+}
+
+.simplicityx-form button {
+    width: 100%;
+    padding: 16px;
+    background: #ff6f61;
+    border: none;
+    border-radius: 12px;
+    font-size: 18px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    transform: scale(1);
+}
+
+.simplicityx-form button:hover {
+    background: #e55a4f;
+    transform: scale(1.05);
+}
+
+.simplicityx-form .component-info {
+    text-align: center;
+    padding: 16px 0;
+    background-color: #f4f4f4;
+    border-top: 2px solid #eee;
+    color: #666;
+    font-size: 14px;
+}
+
+
+/* ShadowVibe - Formulario con Sombra */
+.shadowvibe-form {
+    background-color: #fff;
+    border-radius: 14px;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    width: 100%;
+    max-width: 380px;
+    margin: auto;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.shadowvibe-form:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 45px rgba(0, 0, 0, 0.2);
+}
+
+.shadowvibe-form input, .shadowvibe-form textarea {
+    width: 100%;
+    padding: 18px;
+    margin: 16px 0;
+    border-radius: 12px;
+    border: 2px solid #ddd;
+    background-color: #fff;
+    font-size: 16px;
+    color: #333;
+    transition: all 0.3s ease;
+}
+
+.shadowvibe-form input:focus, .shadowvibe-form textarea:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 12px rgba(0, 123, 255, 0.2);
+    outline: none;
+}
+
+.shadowvibe-form button {
+    width: 100%;
+    padding: 16px;
+    background-color: #007bff;
+    border: none;
+    border-radius: 12px;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease, transform 0.3s ease;
+    transform: scale(1);
+}
+
+.shadowvibe-form button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+.shadowvibe-form .component-info {
+    text-align: center;
+    padding: 12px 0;
+    background-color: rgba(0, 123, 255, 0.05);
+    border-top: 2px solid #ddd;
+    color: #555;
+}
+
+/* FocusFury - Campo de Entrada con Animación */
+.focusfury-input {
+    width: 100%;
+    padding: 16px;
+    margin: 15px 0;
+    border-radius: 12px;
+    border: 2px solid #ccc;
+    background-color: #fff;
+    font-size: 16px;
+    color: #333;
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.4s ease-in-out;
+    position: relative;
+}
+
+.focusfury-input:focus {
+    border-color: #ff8a00;
+    box-shadow: 0 0 20px rgba(255, 138, 0, 0.3);
+    outline: none;
+    transform: translateY(-3px);
+}
+
+.focusfury-input::before {
+    content: '🔎';
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    color: #ff8a00;
+}
+
+.focusfury-input .component-info {
+    text-align: center;
+    padding: 12px 0;
+    background-color: #fff;
+    border-top: 2px solid #eee;
+    color: #777;
+    font-size: 14px;
+}
+
+
+/* IconMaster - Campo de Entrada con Icono */
+.iconmaster-input-container {
+    position: relative;
+    width: 100%;
+}
+
+.iconmaster-input-container .icon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    color: #8e44ad;
+    transition: transform 0.3s ease;
+}
+
+.iconmaster-input {
+    width: 100%;
+    padding: 16px 15px 16px 45px;
+    margin: 12px 0;
+    border-radius: 12px;
+    border: 2px solid #ddd;
+    background-color: #fff;
+    font-size: 16px;
+    color: #333;
+    transition: all 0.3s ease, border-color 0.4s ease;
+}
+
+.iconmaster-input:focus {
+    border-color: #8e44ad;
+    box-shadow: 0 0 15px rgba(142, 68, 173, 0.3);
+    outline: none;
+}
+
+.iconmaster-input:focus + .icon {
+    transform: translateY(-50%) scale(1.2);
+}
+
+.iconmaster-input .component-info {
+    text-align: center;
+    padding: 12px 0;
+    background-color: rgba(142, 68, 173, 0.05);
+    border-top: 2px solid #ddd;
+    color: #555;
+}
+
+
+
+/* NeonGlow - Campo de Entrada Estilo Neón */
+.neon-input {
+    padding: 15px;
+    border: 2px solid #fff;
+    border-radius: 8px;
+    background: transparent;
+    color: #fff;
+    font-size: 16px;
+    text-align: center;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.neon-input:focus {
+    border-color: #ff00ff;
+    box-shadow: 0 0 20px rgba(255, 0, 255, 0.7);
+    outline: none;
+}
+
+/* 3DForm - Campo de Entrada 3D */
+.three-d-input {
+    padding: 15px;
+    border: 2px solid #333;
+    border-radius: 10px;
+    background-color: #fff;
+    font-size: 16px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.three-d-input:focus {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    outline: none;
+}
+
+/* BorderFlow - Campo con Borde Animado */
+.border-animate-input {
+    padding: 16px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    background-color: #fff;
+    font-size: 16px;
+    transition: border 0.3s ease, transform 0.3s ease;
+}
+
+.border-animate-input:focus {
+    border-color: #009688;
+    transform: scale(1.05);
+    outline: none;
+}
+
+/* ShadowTouch - Campo con Sombra Interna */
+.inner-shadow-input {
+    padding: 16px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    background-color: #fff;
+    font-size: 16px;
+    box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+.inner-shadow-input:focus {
+    box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.2);
+    outline: none;
+}
+
+/* BlurOut - Campo con Efecto de Desenfoque */
+.blur-effect-input {
+    padding: 16px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    background-color: #fff;
+    font-size: 16px;
+    transition: background-color 0.3s ease, filter 0.3s ease;
+}
+
+.blur-effect-input:focus {
+    background-color: rgba(255, 255, 255, 0.9);
+    filter: blur(1px);
+    outline: none;
+}
+
+/* GlowPulse - Campo con Pulso de Resplandor */
+.glow-pulse-input {
+    padding: 16px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    background-color: #fff;
+    font-size: 16px;
+    transition: box-shadow 0.3s ease;
+}
+
+.glow-pulse-input:focus {
+    box-shadow: 0 0 25px rgba(255, 0, 255, 0.8);
+    outline: none;
+}
+
+/* HoloFocus - Campo con Efecto Holográfico */
+.holo-focus-input {
+    padding: 16px;
+    border: 2px solid #ddd;
+    border-radius: 12px;
+    background-color: #fff;
+    font-size: 16px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.holo-focus-input:focus {
+    background-color: rgba(0, 255, 255, 0.1);
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.6);
+    outline: none;
+}
+
+/* WaveEffect - Campo con Efecto de Onda al Hacer Focus */
+.wave-effect-input {
+    padding: 16px;
+    border: 2px solid #ddd;
+    border-radius: 12px;
+    background-color: #fff;
+    font-size: 16px;
+    position: relative;
+    overflow: hidden;
+}
+
+.wave-effect-input:focus {
+    outline: none;
+}
+
+.wave-effect-input:focus::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: rgba(0, 255, 255, 0.4);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    animation: waveEffect 1s ease-out;
+}
+
+@keyframes waveEffect {
+    0% {
+        transform: translate(-50%, -50%) scale(0);
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0;
+    }
+}
+
+/* AnimatedLabel - Campo con Etiqueta Animada */
+.animated-label-input {
+    padding: 16px;
+    border: 2px solid #ddd;
+    border-radius: 12px;
+    background-color: #fff;
+    font-size: 16px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.animated-label-input:focus {
+    border-color: #ff5722;
+    outline: none;
+}
+
+.animated-label-input:focus + label {
+    top: -10px;
+    font-size: 12px;
+    color: #ff5722;
+}
+
+/* PulseBorder - Campo con Borde de Pulso */
+.pulse-border-input {
+    padding: 16px;
+    border: 2px solid #ddd;
+    border-radius: 12px;
+    background-color: #fff;
+    font-size: 16px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pulse-border-input:focus {
+    border-color: #ff00ff;
+    box-shadow: 0 0 15px rgba(255, 0, 255, 0.5);
+    outline: none;
+}
+
+/* RippleEffect - Campo con Efecto Ripple al Hacer Focus */
+.ripple-effect-input {
+    padding: 16px;
+    border: 2px solid #ddd;
+    border-radius: 12px;
+    background-color: #fff;
+    font-size: 16px;
+    position: relative;
+    overflow: hidden;
+}
+
+.ripple-effect-input:focus {
+    outline: none;
+}
+
+.ripple-effect-input:focus::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200%;
+    height: 200%;
+    background: rgba(0, 255, 255, 0.4);
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    animation: rippleEffect 0.6s ease-out;
+}
+
+@keyframes rippleEffect {
+    0% {
+        transform: translate(-50%, -50%) scale(0);
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0;
+    }
+}
