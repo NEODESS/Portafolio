@@ -57,7 +57,7 @@ body.light-mode .componentes-nav a:hover {
 /* Estilos de la barra lateral */
 .sidebar {
     top: 0px;
-    left: 1rem;
+    left: 0px;
     width: 260px; /* Ancho de la barra lateral */
     background-color: var(--sidebar-bg); /* Fondo de la barra lateral */
     border-right: 1px solid var(--border); /* Borde derecho de la barra lateral */
@@ -133,15 +133,17 @@ body.light-mode .componentes-nav a:hover {
 }
 
 .component-section h2 {
-    margin-bottom: 1.5rem; /* Margen inferior */
-    font-size: 1.5rem; /* Tamaño de fuente */
+    margin-bottom: 1.5rem;
+    font-size: 3rem;
+    display: flex;
+    justify-content: center;
 }
 
 /* Estilos de la cuadrícula de componentes */
 .components-grid {
     display: grid; /* Usamos grid para el layout */
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Columnas automáticas con un mínimo de 250px */
-    gap: 1.5rem; /* Espacio entre elementos */
+    gap: 2.5rem; /* Espacio entre elementos */
 }
 
 /* Estilos de las tarjetas de componentes */
@@ -259,8 +261,11 @@ body.light-mode .componentes-nav a:hover {
     }
 
     .main-content {
-        margin-left: 0; /* Eliminar margen izquierdo */
-        width: 100%; /* Ancho completo */
+        margin-left: 0;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+
     }
 
     .components-grid {
@@ -942,3 +947,4 @@ body.light-mode .componentes-nav a:hover {
 .notification-content {
     text-align: center; /* Alineación del texto al centro */
 }
+

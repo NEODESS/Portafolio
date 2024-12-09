@@ -535,21 +535,36 @@ a{
 }
 
 /* Estilos para los iconos sociales */
+/* Estilos para los iconos sociales */
 .social-icons {
     margin-top: 1rem;
     display: flex;
     gap: 1rem;
+    justify-content: flex-start; /* Centrar los iconos horizontalmente */
+    color: var(--text);
+    font-size: 2rem; /* Ajusta el tamaño según tus necesidades */
+    transition: font-size 0.3s ease;
+
 }
 
-.social-icon {
-    color: var(--text);
-    font-size: 1.5rem;
-    transition: color 0.3s;
+
+
+/* Aumentar el tamaño de los iconos en pantallas pequeñas */
+@media (max-width: 768px) {
+    .social-icons {
+        justify-content: center; /* Asegurarse de que los iconos estén centrados */
+    }
+    .social-icon {
+        font-size: 2.5rem; /* Ajusta el tamaño según tus necesidades */
+    }
 }
+
 
 .social-icon:hover {
     color: var(--primary);
 }
+
+
 
 /* Otros estilos existentes */
 .primary-btn {

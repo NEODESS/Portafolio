@@ -46,14 +46,15 @@ const toggleSidebar = () => {
     document.querySelector('.sidebar').classList.toggle('active');
 };
 
-// Añadir botón de toggle en móvil si es necesario
+/// Añadir botón de toggle en móvil si es necesario
 if (window.innerWidth <= 768) {
     const toggleButton = document.createElement('button');
     toggleButton.innerHTML = '☰';
     toggleButton.style.cssText = `
         position: fixed;
         top: 1rem;
-        left: 1rem;
+        left: 50%;
+        transform: translateX(-50%);
         z-index: 1001;
         background: var(--accent);
         border: none;
@@ -65,7 +66,6 @@ if (window.innerWidth <= 768) {
     toggleButton.addEventListener('click', toggleSidebar);
     document.body.appendChild(toggleButton);
 }
-
 // script.js
 document.addEventListener('DOMContentLoaded', () => {
     // Funcionalidad para el menú móvil
@@ -75,18 +75,18 @@ document.addEventListener('DOMContentLoaded', () => {
             toggleButton.innerHTML = '☰';
             toggleButton.className = 'mobile-menu-toggle';
             toggleButton.style.cssText = `
-                position: fixed;
-                top: 1rem;
-                left: 1rem;
-                z-index: 1000;
-                background: var(--primary);
-                border: none;
-                color: white;
-                padding: 0.5rem;
-                border-radius: 4px;
-                cursor: pointer;
-            `;
-            
+        position: fixed;
+        top: 1rem;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 1001;
+        background: var(--accent);
+        border: none;
+        color: white;
+        padding: 0.5rem;
+        border-radius: 4px;
+        cursor: pointer;
+    `;
             document.body.appendChild(toggleButton);
             
             toggleButton.addEventListener('click', () => {
