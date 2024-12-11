@@ -117,17 +117,17 @@
             </div>
             
             <div class="contact-container">
-                <form class="contact-form">
+                <form id="contact-form" class="contact-form">
                     <div class="input-group">
-                        <input type="text" id="name" required>
+                        <input type="text" id="name" name="name" required>
                         <label for="name">Tu Nombre</label>
                     </div>
                     <div class="input-group">
-                        <input type="email" id="email" required>
+                        <input type="email" id="email" name="email" required>
                         <label for="email">Tu Correo Electrónico</label>
                     </div>
                     <div class="input-group">
-                        <textarea id="message" required></textarea>
+                        <textarea id="message" name="message" required></textarea>
                         <label for="message">Tu Mensaje</label>
                     </div>
                     <button type="submit" class="primary-btn">Enviar Mensaje</button>
@@ -151,5 +151,38 @@
     </footer>
 
     <script src="/static/js/portafolio.js"></script>
+
+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+
+    <script>
+        // Inicializa EmailJS con tu ID de usuario
+        (function(){
+            emailjs.init("tu_user_id"); // Sustituye con tu User ID de EmailJS
+        })();
+
+        // Maneja el envío del formulario
+        document.getElementById("contact-form").addEventListener("submit", function(event){
+            event.preventDefault(); // Previene el envío tradicional del formulario
+
+            // Recoge los datos del formulario
+            var formData = new FormData(this);
+            var data = {
+                name: formData.get('name'),
+                email: formData.get('email'),
+                message: formData.get('message')
+            };
+
+            // Enviar los datos a EmailJS
+            emailjs.send("tu_service_id", "tu_template_id", data)
+                .then(function(response) {
+                    console.log("Mensaje enviado con éxito", response);
+                    alert("¡Mensaje enviado exitosamente!");
+                }, function(error) {
+                    console.log("Error al enviar mensaje", error);
+                    alert("Hubo un problema al enviar el mensaje.");
+                });
+        });
+    </script>
+
 </body>
 </html>
