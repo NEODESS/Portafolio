@@ -41,47 +41,49 @@
                         <a href="https://Wa.me/573207366343"><button class="primary-btn">Contactame</button></a>
                         <button class="secondary-btn"><a href="/static/document/Hoja de Vida Daniel Rodriguez Programador.pdf" download>Descargar CV</a></button>
                     </div>
-                     <div class="social-icons">
-                    <a href="https://github.com/NEODESS" target="_blank" class="social-icon">
-                        <i class="fab fa-github"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/in/daniel-rodriguez-lorduy" target="_blank" class="social-icon">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                </div>
+                    <div class="social-icons">
+                        <a href="https://github.com/NEODESS" target="_blank" class="social-icon">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/daniel-rodriguez-lorduy" target="_blank" class="social-icon">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
-
-
 
         <section id="portfolio" class="portfolio">
             <div class="section-header">
                 <h2>TRABAJOS DESTACADOS</h2>
                 <h3>Últimos Proyectos</h3>
-            </div></a>
+            </div>
             
             <div class="portfolio-grid">
-                <div class="portfolio-item"><a href="https://github.com/NEODESS/Portal-de-empleo-Chambeapues">
-                    <img src="/static/img/chambea pues.jpg" alt="Proyecto 1">
-                    <div class="portfolio-info">
-                        <h4>Portal de Empleo</h4>
-                        <p>Desarrollo We</p>
-                        <a href="#" class="view-project">Ver Proyecto →</a>
-                    </a></div>
+                <div class="portfolio-item">
+                    <a href="https://github.com/NEODESS/Portal-de-empleo-Chambeapues">
+                        <img src="/static/img/chambea pues.jpg" alt="Proyecto 1">
+                        <div class="portfolio-info">
+                            <h4>Portal de Empleo</h4>
+                            <p>Desarrollo Web</p>
+                            <a href="#" class="view-project">Ver Proyecto →</a>
+                        </div>
+                    </a>
                 </div>
-                <div class="portfolio-item"><a href="/templates/index_componentes.html">
-                    <img src="/static/img/componentes.jpg" alt="Proyecto 2">
-                    <div class="portfolio-info">
-                        <h4>Nombre del Proyecto</h4>
-                        <p>Desarrollo Web</p>
-                        <a href="#" class="view-project">Ver Proyecto →</a>
-                    </div></a>
+                <div class="portfolio-item">
+                    <a href="/templates/index_componentes.html">
+                        <img src="/static/img/componentes.jpg" alt="Proyecto 2">
+                        <div class="portfolio-info">
+                            <h4>Nombre del Proyecto</h4>
+                            <p>Desarrollo Web</p>
+                            <a href="#" class="view-project">Ver Proyecto →</a>
+                        </div>
+                    </a>
                 </div>
             </div>
         </section>
 
-                <section id="services" class="services">
+        <section id="services" class="services">
             <div class="section-header">
                 <h2>SERVICIOS</h2>
                 <h3>Lo que Creo</h3>
@@ -108,7 +110,6 @@
                 </div>
             </div>
         </section>
-
 
         <section id="contact" class="contact">
             <div class="section-header">
@@ -152,12 +153,13 @@
 
     <script src="/static/js/portafolio.js"></script>
 
-    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.latest.js"></script>
+
 
     <script>
         // Inicializa EmailJS con tu ID de usuario
         (function(){
-            emailjs.init("kaJYNV8YqyUO4S21O"); // 
+            emailjs.init("kaJYNV8YqyUO4S21O"); // Asegúrate de que este es tu User ID correcto
         })();
 
         // Maneja el envío del formulario
@@ -173,13 +175,13 @@
             };
 
             // Enviar los datos a EmailJS
-            emailjs.send("service_ou4f8cl", "template_uj214ho", data)
+            emailjs.send("service_ou4f8cl", "template_5053avf", data)
                 .then(function(response) {
                     console.log("Mensaje enviado con éxito", response);
                     alert("¡Mensaje enviado exitosamente!");
                 }, function(error) {
                     console.log("Error al enviar mensaje", error);
-                    alert("Hubo un problema al enviar el mensaje.");
+                    alert("Hubo un problema al enviar el mensaje. Detalles: " + error.text);
                 });
         });
     </script>
