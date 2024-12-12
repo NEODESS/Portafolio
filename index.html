@@ -11,7 +11,7 @@
     <header>
         <nav>
             <div class="logo">Portafolio<span>.</span></div>
-            <ul>
+            <ul class="nav-links">
                 <li><a href="#home">Inicio</a></li>
                 <li><a href="#services">Servicios</a></li>
                 <li><a href="#portfolio">Portafolio</a></li>
@@ -151,39 +151,10 @@
         </div>
     </footer>
 
-    <script src="/static/js/portafolio.js"></script>
 
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="/static/js/portafolio.js"></script>
 
-    <script>
-        // Inicializa EmailJS con tu ID de usuario
-        (function(){
-            emailjs.init("kaJYNV8YqyUO4S21O"); // Reemplaza con tu User ID de EmailJS
-        })();
-
-        // Maneja el envío del formulario
-        document.getElementById("contact-form").addEventListener("submit", function(event){
-            event.preventDefault(); // Previene el envío tradicional del formulario
-
-            // Recoge los datos del formulario
-            var formData = new FormData(this);
-            var data = {
-                name: formData.get('name'),
-                email: formData.get('email'),
-                message: formData.get('message')
-            };
-
-            // Enviar los datos a EmailJS
-            emailjs.send("service_ou4f8cl", "template_5053avf", data)
-                .then(function(response) {
-                    console.log("Mensaje enviado con éxito", response);
-                    alert("¡Mensaje enviado exitosamente!");
-                }, function(error) {
-                    console.log("Error al enviar mensaje", error);
-                    alert("Hubo un problema al enviar el mensaje. Detalles: " + error.text);
-                });
-        });
-    </script>
 
 </body>
 </html>

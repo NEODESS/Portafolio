@@ -5,17 +5,23 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         document.querySelector(this.getAttribute('href')).scrollIntoView({
             behavior: 'smooth'
         });
+
+        // Cierra el menú hamburguesa al hacer clic en un enlace
+        const navLinks = document.querySelector('.nav-links');
+        navLinks.classList.remove('active');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        mobileMenu.classList.remove('active');
     });
 });
 
-// Mobile menu toggle
-const mobileMenu = document.querySelector('.mobile-menu');
-const nav = document.querySelector('nav ul');
-
-mobileMenu.addEventListener('click', () => {
-    mobileMenu.classList.toggle('active');
-    nav.classList.toggle('active');
-});
+    // Mobile menu toggle
+    const mobileMenu = document.querySelector('.mobile-menu');
+    const navLinks = document.querySelector('.nav-links');
+    
+    mobileMenu.addEventListener('click', () => {
+        mobileMenu.classList.toggle('active');
+        navLinks.classList.toggle('active');
+    });
 
 // Header scroll effect
 const header = document.querySelector('header');
@@ -68,9 +74,38 @@ if (form) {
         
         // Show success message (you can customize this)
         alert('Message sent successfully!');
-        form.reset();
+
     });
 }
+
+       // Inicializa EmailJS con tu ID de usuario
+        (function(){
+            emailjs.init("kaJYNV8YqyUO4S21O"); // Reemplaza con tu User ID de EmailJS
+        })();
+
+        // Maneja el envío del formulario
+        document.getElementById("contact-form").addEventListener("submit", function(event){
+            event.preventDefault(); // Previene el envío tradicional del formulario
+
+            // Recoge los datos del formulario
+            var formData = new FormData(this);
+            var data = {
+                name: formData.get('name'),
+                email: formData.get('email'),
+                message: formData.get('message')
+            };
+
+            // Enviar los datos a EmailJS
+            emailjs.send("service_ou4f8cl", "template_5053avf", data)
+                .then(function(response) {
+                    console.log("Mensaje enviado con éxito", response);
+                    alert("¡Mensaje enviado exitosamente!");
+                }, function(error) {
+                    console.log("Error al enviar mensaje", error);
+                    alert("Hubo un problema al enviar el mensaje. Detalles: " + error.text);
+                });
+        });
+
 
 // Floating animation for hero image
 const heroImage = document.querySelector('.floating-card');
