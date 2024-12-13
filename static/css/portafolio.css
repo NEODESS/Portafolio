@@ -156,9 +156,10 @@ color: var(--primary);
 .floating-card {
 
     position: relative;
-    width: 80%;
-    padding-top: 80%;
-    border-radius: 50%; /* Hace que la imagen sea circular */
+    width: 70%;
+    height: 100%;
+    padding-top: 100%;
+    border-radius: 10%; /* Hace que la imagen sea circular */
     overflow: hidden;
     background: var(--card-bg);
 }
@@ -166,9 +167,9 @@ color: var(--primary);
 .floating-card img {
     position: absolute;
     top: 0%;
-    left: -78%;
-    width: 178%;
-    height: 230%;
+    left: 0%;
+    right: 0%;
+    height: 100%;
     border-radius: 0%; /* Hace que la imagen sea circular */
     object-fit: cover;
 }
